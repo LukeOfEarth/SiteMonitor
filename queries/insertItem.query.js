@@ -6,16 +6,16 @@ const insertItemQuery = (data) => {
         TableName:"site_monitoring_table",
         Item: {
             "SiteId":{
-                S:data.SiteId
+                "S":data.SiteId
             },
             "SiteName":{
-                S:data.SiteName
+                "S":data.SiteName
             },
             "Status":{
-                S:data.Status
+                "S":data.Status
             },
             "TimeToExist":{
-                N:data.TimeToExist
+                "N":`${data.TimeToExist}`
             }
         }
     }
@@ -23,8 +23,6 @@ const insertItemQuery = (data) => {
     ddb.putItem(params, (err, data) => {
         if(err){
             console.log(err);
-        } else {
-            console.log(data);
         }
     });
 }

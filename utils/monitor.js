@@ -12,16 +12,18 @@ const getSiteList = async () => {
 const requestSite = async (url) => {
     const result = await fetch(`https://${url}`);
 
-    const date = new Date();
+    let date = new Date();
+    date = Math.floor(date.getTime()/1000);
+
     const status = getStatus(result);
     const name = getSiteName(url);
 
     let ttl = new Date();
     ttl.setDate(ttl.getDate() + 90);
-    ttl = ttl.getTime();
+    ttl = Math.floor(ttl.getTime()/1000);
 
     const data = {
-        SiteId: `${result.url}|${date.getTime()}`,
+        SiteId: `${url}|${date}`,
         SiteName: name,
         Status: status,
         TimeToExist: ttl
