@@ -1,4 +1,3 @@
-const e = require('express');
 const { ddb } = require('../utils/dynamo');
 
 const insertItemQuery = (data) => {
