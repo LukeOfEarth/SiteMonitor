@@ -2,7 +2,7 @@ const { ddb } = require('../utils/dynamo');
 
 const insertItemQuery = (data) => {
     const params = {
-        TableName:"site_monitoring_table",
+        TableName:"luke_site_monitoring_table",
         Item: {
             "SiteId":{
                 "S":data.SiteId

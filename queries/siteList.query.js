@@ -2,7 +2,7 @@ const { ddb } = require('../utils/dynamo');
 
 const getSiteListQuery = async () => {
     const params = {
-        TableName:"site_list_table"
+        TableName:"luke_site_list_table"
     };
     
     const result = ddb.scan(params).promise();
