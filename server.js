@@ -3,7 +3,7 @@ const { performMonitoring } = require('./utils/monitor')
 
 const app = express();
 
-const PORT = process.env.PORT ?? 3000;
+const PORT = process.env.PORT ?? 80;
 
 app.get('/', async (req, res) => {
     console.log('Request received');
