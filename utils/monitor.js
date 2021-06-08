@@ -6,7 +6,7 @@ const { insertItemQuery } = require('../queries/insertItem.query');
 
 const getSiteList = async () => {
     const siteList = await getSiteListQuery();
-    return siteList
+    return siteList;
 }
 
 const requestSite = async (url, siteName) => {
@@ -25,10 +25,6 @@ const requestSite = async (url, siteName) => {
         TimeToExist: ttl
     }
 
-    insertMonitoring(data);
-}
-
-const insertMonitoring = (data) => {
     insertItemQuery(data);
 }
 
